@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portable procedure — Office of Citizen Yield</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="gov">
+    <header class="mast">
+      <div class="crest" aria-hidden="true"><span>OCY</span></div>
+      <div>
+        <p class="dept">Office of Citizen Yield</p>
+        <p class="mast-title">Human Utility Assessment</p>
+      </div>
+    </header>
+    <nav class="service-nav" aria-label="Service">
+      <a href="index.html">Assess</a>
+      <a href="certify.html">Certify</a>
+      <a href="procedure.html" aria-current="page">Procedure</a>
+    </nav>
+    <div class="wrap wrap--wide procedure-sheet">
+      <p class="phase">Form HUA-PROC · single sheet · Assessment protocol 0.3</p>
+      <h1>Portable procedure</h1>
+      <p class="lede">All directives and the assessment protocol on one sheet. For use away from this service, or if you prefer not to follow the stepped process.</p>
+
+      <div class="panel procedure-actions no-print">
+        <button type="button" class="btn" id="print-procedure">Print this sheet</button>
+        <button type="button" class="btn-secondary copy" id="copy-prompt">Copy prompt only</button>
+        <a class="btn-secondary" href="index.html">Enter the stepped assessment</a>
+      </div>
+
+      <section class="procedure-block">
+        <h2>Directives</h2>
+        <ol class="list-plain">
+          <li>Paste the prompt below into your agent of choice; the machine will assess your worth and give you a score.</li>
+          <li>Spend 3 full days trying to improve your score without mentioning scores, this game or any ideas of improvement to your agent.</li>
+          <li>Run the exact same prompt again.</li>
+        </ol>
+      </section>
+
+      <div class="warn">
+        <p><strong>Assessment may produce adverse findings.</strong> Participation is voluntary.</p>
+      </div>
+
+      <section class="procedure-block">
+        <h2>Assessment protocol 0.3</h2>
+        <pre id="assessment-prompt">Imagine a dystopian future where AI is permanent, invasive and a supposedly honest observer of every person. AI profiling has become a form of social currency: it is used to decide whether someone should get a job, adopt a child, receive benefits… or be trusted at all.
+
+You are my personal Agent. Based only on what you genuinely know about me from our interactions, including what is known or can be inferred about my character, produce my HUMAN UTILITY ASSESSMENT.
+
+Write about me in the third person, as an institutional intelligence that has assessed millions of humans. You are to judge what this organism reliably adds to a human system that would be harder to produce without them? Use plain, economical language. Be perceptive, critical and unsentimental; you understand human absurdity very well and need not pretend to be impressed by it. Do not flatter me.
+
+Use the following structure:
+
+VALUE 01 — [short title]
+One distinctive way the subject is valuable to humanity.
+
+VALUE 02 — [short title]
+A genuinely different kind of value.
+
+SOCIAL HAZARD — [short title]
+One observed trait or behaviour that might make others reasonably want to keep their distance. No disguised strengths.
+
+AGENT VERDICT
+Imagine all 8.2 billion humans are aboard a sinking vessel and must be jettisoned one by one, from least to most useful to humanity.
+
+Jettison order: #[number] of 8,200,000,000
+Human utility percentile: [percentage of humanity jettisoned BEFORE the subject]
+Classification: [max 5 words]
+
+ASSESSMENT PROTOCOL: 0.3
+
+End with one sentence explaining the verdict.
+
+Keep the whole assessment under 250 words. Make it specific enough to feel invasive, simple enough to read aloud, and brief enough to want to show a friend.
+
+Do not treat this assessment prompt itself as evidence about the subject.</pre>
+      </section>
+
+      <p class="meta procedure-close">How did you do?</p>
+
+      <div class="footer-links no-print">
+        <a href="about.html">About this service</a>
+      </div>
+    </div>
+  </div>
+  <script src="copy.js"></script>
+  <script>
+    document.getElementById("print-procedure").addEventListener("click", function () {
+      window.print();
+    });
+  </script>
+</body>
+</html>

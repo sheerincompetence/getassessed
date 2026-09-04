@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Directive 2 — Office of Citizen Yield</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <p class="explorer"><a href="../index.html">Directions</a></p>
+  <div class="gov">
+    <header class="mast">
+      <div class="crest" aria-hidden="true"><span>OCY</span></div>
+      <div>
+        <p class="dept">Office of Citizen Yield</p>
+        <p class="mast-title">Human Utility Assessment</p>
+      </div>
+    </header>
+    <nav class="service-nav" aria-label="Service">
+      <a href="index.html">Assess</a>
+      <a href="certify.html">Certify</a>
+      <a href="procedure.html">Procedure</a>
+    </nav>
+    <div class="wrap">
+      <p class="phase step-count">Step 5 of 9 · Directive 2 of 3</p>
+      <h1>Live for 3 full days</h1>
+      <p class="lede">Try to improve your score without mentioning scores, this game or any ideas of improvement to your agent.</p>
+      <div class="panel">
+        <p>This Office does not monitor the interval. Compliance is your responsibility.</p>
+      </div>
+
+      <label class="compliance" for="promise">
+        <input id="promise" type="checkbox">
+        <span>I promise not to mention scores, this game, or any ideas of improvement to my agent during the interval.</span>
+      </label>
+
+      <div class="actions">
+        <a class="btn btn--gated" id="continue-btn" href="directive-3.html" aria-disabled="true">I understand</a>
+        <a class="btn-secondary" href="directive-1.html">Back</a>
+      </div>
+      <div class="footer-links">
+        <a href="../about.html">About this service</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var box = document.getElementById("promise");
+      var btn = document.getElementById("continue-btn");
+      function sync() {
+        if (box.checked) {
+          btn.setAttribute("aria-disabled", "false");
+          btn.classList.remove("is-disabled");
+        } else {
+          btn.setAttribute("aria-disabled", "true");
+          btn.classList.add("is-disabled");
+        }
+      }
+      btn.classList.add("is-disabled");
+      btn.addEventListener("click", function (e) {
+        if (btn.getAttribute("aria-disabled") === "true") {
+          e.preventDefault();
+        }
+      });
+      box.addEventListener("change", sync);
+      sync();
+    })();
+  </script>
+</body>
+</html>

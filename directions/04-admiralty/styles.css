@@ -1,0 +1,133 @@
+:root {
+  --sea: #0c1c28;
+  --brass: #c4a35a;
+  --paper: #efe6d4;
+  --ink: #1a1712;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at top, #163044 0%, var(--sea) 55%);
+  color: var(--ink);
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  min-height: 100vh;
+}
+
+.explorer {
+  margin: 0;
+  padding: 0.4rem 0.75rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.7rem;
+  background: #05080c;
+  color: #ccc;
+}
+.explorer a { color: #eee; }
+
+.page {
+  max-width: 40rem;
+  margin: 1.75rem auto 3rem;
+  background: var(--paper);
+  padding: 2rem 1.6rem;
+  border: 1px solid var(--brass);
+  box-shadow: 0 0 0 8px var(--sea);
+}
+
+.court {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: #3d3424;
+}
+
+.sitting {
+  text-align: center;
+  font-style: italic;
+  margin: 0.3rem 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.85rem;
+  margin: 0 0 1rem;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  padding: 0.6rem 0;
+}
+
+.rule {
+  text-align: center;
+  font-size: 0.95rem;
+  max-width: 32rem;
+  margin: 0 auto 1.75rem;
+}
+
+h2 {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+}
+
+ol {
+  padding-left: 1.2rem;
+}
+
+li { margin-bottom: 0.8rem; }
+
+.warn {
+  text-align: center;
+  border-top: 1px solid var(--brass);
+  border-bottom: 1px solid var(--brass);
+  padding: 0.7rem;
+  font-style: italic;
+}
+
+.prompt-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+button {
+  font-family: inherit;
+  background: var(--sea);
+  color: var(--paper);
+  border: 1px solid var(--brass);
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+}
+
+pre {
+  white-space: pre-wrap;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  background: #f7f0e0;
+  padding: 1rem;
+  border: 1px solid #d4c4a0;
+  max-height: 22rem;
+  overflow: auto;
+  columns: 1;
+}
+
+.close h2 {
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  margin-top: 2.25rem;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #4a4336;
+}
+footer a { color: inherit; }

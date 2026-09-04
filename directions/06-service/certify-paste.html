@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Paste assessment — Office of Citizen Yield</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <p class="explorer"><a href="../index.html">Directions</a></p>
+  <div class="gov">
+    <header class="mast">
+      <div class="crest" aria-hidden="true"><span>OCY</span></div>
+      <div>
+        <p class="dept">Office of Citizen Yield</p>
+        <p class="mast-title">Human Utility Assessment</p>
+      </div>
+    </header>
+    <nav class="service-nav" aria-label="Service">
+      <a href="index.html">Assess</a>
+      <a href="certify.html" aria-current="page">Certify</a>
+          <a href="procedure.html">Procedure</a>
+    </nav>
+    <div class="wrap">
+      <p class="phase step-count">Certification · Step 2 of 3</p>
+      <h1>Paste your assessment</h1>
+      <p class="lede">Paste the full response from your agent. Do not edit it unless you choose to.</p>
+
+      <label class="field" for="subject-name">
+        <span>Subject name or alias (optional)</span>
+        <p class="hint">If blank, the certificate will read SUBJECT: UNDISCLOSED.</p>
+        <input id="subject-name" type="text" autocomplete="off" maxlength="80">
+      </label>
+
+      <label class="field" for="assessment-text">
+        <span>Agent assessment</span>
+        <textarea id="assessment-text" spellcheck="false" placeholder="Paste the Human Utility Assessment here"></textarea>
+      </label>
+
+      <p id="parse-error" class="error" hidden></p>
+
+      <div class="actions">
+        <button type="button" class="btn" id="certify-btn">Certify</button>
+        <button type="button" class="btn-secondary" id="sample-btn">Use sample assessment</button>
+        <a class="btn-secondary" href="certify.html">Back</a>
+      </div>
+
+      <div class="footer-links">
+        <a href="../about.html">About this service</a>
+      </div>
+    </div>
+  </div>
+  <script src="certify.js"></script>
+  <script>
+    (function () {
+      var textEl = document.getElementById("assessment-text");
+      var nameEl = document.getElementById("subject-name");
+      var errEl = document.getElementById("parse-error");
+      var btn = document.getElementById("certify-btn");
+      var sample = document.getElementById("sample-btn");
+
+      sample.addEventListener("click", function () {
+        textEl.value = window.HUACertify.SAMPLE;
+        errEl.hidden = true;
+      });
+
+      btn.addEventListener("click", function () {
+        var parsed = window.HUACertify.parseAssessment(textEl.value || "");
+        if (parsed.percentile == null) {
+          errEl.textContent = "Could not find a human utility percentile. Paste the full assessment, including AGENT VERDICT.";
+          errEl.hidden = false;
+          return;
+        }
+        var payload = {
+          subject: window.HUACertify.subjectName(nameEl.value),
+          value01: parsed.value01 || "—",
+          value02: parsed.value02 || "—",
+          hazard: parsed.hazard || "—",
+          classification: parsed.classification || "UNCLASSIFIED",
+          percentile: parsed.percentile,
+          jettison: parsed.jettison,
+          protocol: parsed.protocol,
+          retention: window.HUACertify.retentionFor(parsed.percentile),
+          createdAt: new Date().toISOString()
+        };
+        try {
+          sessionStorage.setItem(window.HUACertify.STORAGE_KEY, JSON.stringify(payload));
+        } catch (e) {
+          errEl.textContent = "Could not store the certificate on this device.";
+          errEl.hidden = false;
+          return;
+        }
+        window.location.href = "certificate.html";
+      });
+    })();
+  </script>
+</body>
+</html>

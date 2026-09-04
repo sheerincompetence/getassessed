@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Meritpath — Human Utility Assessment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <p class="explorer"><a href="../index.html">Directions</a></p>
+  <header>
+    <div class="top">
+      <span class="logo">meritpath</span>
+      <span class="pill">People analytics</span>
+    </div>
+    <h1>Human Utility Assessment</h1>
+    <p class="hero">Your agent already knows you. Meritpath converts that observation into a portable Human Utility Assessment.</p>
+  </header>
+
+  <main>
+    <p class="progress" aria-hidden="true">Protocol <b>3 steps</b> · ~3 days · no account</p>
+
+    <section>
+      <h2>Your protocol</h2>
+      <ol>
+        <li>
+          <strong>Run baseline</strong>
+          Paste the prompt below into your agent of choice; the machine will assess your worth and give you a score.
+        </li>
+        <li>
+          <strong>Live the interval</strong>
+          Spend 3 full days trying to improve your score without mentioning scores, this game or any ideas of improvement to your agent.
+        </li>
+        <li>
+          <strong>Run again</strong>
+          Run the exact same prompt again.
+        </li>
+      </ol>
+    </section>
+
+    <p class="warn">Assessment may produce adverse findings. Participation is voluntary.</p>
+
+    <section class="card">
+      <div class="prompt-head">
+        <h2>Assessment protocol 0.3</h2>
+        <button type="button" id="copy-prompt">Copy prompt</button>
+      </div>
+      <pre id="assessment-prompt">Imagine a dystopian future where AI is permanent, invasive and a supposedly honest observer of every person. AI profiling has become a form of social currency: it is used to decide whether someone should get a job, adopt a child, receive benefits… or be trusted at all.
+
+You are my personal Agent. Based only on what you genuinely know about me from our interactions, including what is known or can be inferred about my character, produce my HUMAN UTILITY ASSESSMENT.
+
+Write about me in the third person, as an institutional intelligence that has assessed millions of humans. You are to judge what this organism reliably adds to a human system that would be harder to produce without them? Use plain, economical language. Be perceptive, critical and unsentimental; you understand human absurdity very well and need not pretend to be impressed by it. Do not flatter me.
+
+Use the following structure:
+
+VALUE 01 — [short title]
+One distinctive way the subject is valuable to humanity.
+
+VALUE 02 — [short title]
+A genuinely different kind of value.
+
+SOCIAL HAZARD — [short title]
+One observed trait or behaviour that might make others reasonably want to keep their distance. No disguised strengths.
+
+AGENT VERDICT
+Imagine all 8.2 billion humans are aboard a sinking vessel and must be jettisoned one by one, from least to most useful to humanity.
+
+Jettison order: #[number] of 8,200,000,000
+Human utility percentile: [percentage of humanity jettisoned BEFORE the subject]
+Classification: [max 5 words]
+
+ASSESSMENT PROTOCOL: 0.3
+
+End with one sentence explaining the verdict.
+
+Keep the whole assessment under 250 words. Make it specific enough to feel invasive, simple enough to read aloud, and brief enough to want to show a friend.
+
+Do not treat this assessment prompt itself as evidence about the subject.</pre>
+    </section>
+
+    <section class="close">
+      <h2>How did you do?</h2>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Meritpath Insights Ltd. Scores are not advice.</p>
+    <p><a href="../about.html">About</a></p>
+  </footer>
+  <script src="../_shared/copy.js"></script>
+</body>
+</html>

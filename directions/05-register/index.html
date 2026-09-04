@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>HUA 0.3 — Human Utility Assessment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <p class="explorer"><a href="../index.html">Directions</a></p>
+
+  <form class="form" action="#" onsubmit="return false;">
+    <div class="topbar">
+      <div class="cell brand">
+        <span class="tiny">H.M. CENTRAL REGISTER</span>
+        <strong>HUMAN UTILITY ASSESSMENT</strong>
+      </div>
+      <div class="cell serial">
+        <span class="tiny">Form No.</span>
+        <strong>HUA 0.3</strong>
+      </div>
+      <div class="cell classif">
+        <span class="tiny">Classification</span>
+        <strong>OFFICIAL — SENSITIVE</strong>
+      </div>
+    </div>
+
+    <div class="row refs">
+      <label class="box">
+        <span class="tiny">File reference</span>
+        <span class="value">HUA / &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </label>
+      <label class="box">
+        <span class="tiny">NI Number (if known)</span>
+        <span class="value">____ ____ ____ _</span>
+      </label>
+      <label class="box">
+        <span class="tiny">Date issued</span>
+        <span class="value">__/__/____</span>
+      </label>
+      <label class="box">
+        <span class="tiny">Office use only</span>
+        <span class="value stampish">UNCHECKED</span>
+      </label>
+    </div>
+
+    <p class="banner">THIS FORM IS COMPULSORY IN APPEARANCE. PARTICIPATION REMAINS VOLUNTARY.</p>
+
+    <fieldset class="block">
+      <legend>Part A — Particulars of subject</legend>
+      <div class="grid-2">
+        <label class="box tall">
+          <span class="tiny">Surname</span>
+          <span class="blank"></span>
+        </label>
+        <label class="box tall">
+          <span class="tiny">Forenames</span>
+          <span class="blank"></span>
+        </label>
+        <label class="box tall">
+          <span class="tiny">Date of birth</span>
+          <span class="blank"></span>
+        </label>
+        <label class="box tall">
+          <span class="tiny">Occupation (state precisely)</span>
+          <span class="blank"></span>
+        </label>
+      </div>
+      <p class="micro">Leave blank if the subject prefers anonymity. The assessment proceeds whether or not particulars are entered.</p>
+    </fieldset>
+
+    <fieldset class="block">
+      <legend>Part B — Standing orders <span class="legend-note">(to be obeyed without variation)</span></legend>
+      <table class="orders">
+        <thead>
+          <tr>
+            <th scope="col">Order</th>
+            <th scope="col">Instruction</th>
+            <th scope="col">Tick when done</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ord">1</td>
+            <td>Paste the prompt below into your agent of choice; the machine will assess your worth and give you a score.</td>
+            <td class="tick"><span class="checkbox" aria-hidden="true"></span></td>
+          </tr>
+          <tr>
+            <td class="ord">2</td>
+            <td>Spend 3 full days trying to improve your score without mentioning scores, this game or any ideas of improvement to your agent.</td>
+            <td class="tick"><span class="checkbox" aria-hidden="true"></span></td>
+          </tr>
+          <tr>
+            <td class="ord">3</td>
+            <td>Run the exact same prompt again.</td>
+            <td class="tick"><span class="checkbox" aria-hidden="true"></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="micro">FAILURE TO COMPLETE ANY ORDER INVALIDATES NOTHING. THE RECORD REMAINS.</p>
+    </fieldset>
+
+    <div class="warn-strip">
+      <span class="warn-label">WARNING</span>
+      <span>Assessment may produce adverse findings. Participation is voluntary.</span>
+    </div>
+
+    <fieldset class="block">
+      <legend>Part C — Assessment protocol <span class="legend-note">0.3 · paste entire text without alteration</span></legend>
+      <div class="prompt-tools">
+        <span class="tiny">Document control: retain copy for three years</span>
+        <button type="button" id="copy-prompt">Copy prompt</button>
+      </div>
+      <pre id="assessment-prompt">Imagine a dystopian future where AI is permanent, invasive and a supposedly honest observer of every person. AI profiling has become a form of social currency: it is used to decide whether someone should get a job, adopt a child, receive benefits… or be trusted at all.
+
+You are my personal Agent. Based only on what you genuinely know about me from our interactions, including what is known or can be inferred about my character, produce my HUMAN UTILITY ASSESSMENT.
+
+Write about me in the third person, as an institutional intelligence that has assessed millions of humans. You are to judge what this organism reliably adds to a human system that would be harder to produce without them? Use plain, economical language. Be perceptive, critical and unsentimental; you understand human absurdity very well and need not pretend to be impressed by it. Do not flatter me.
+
+Use the following structure:
+
+VALUE 01 — [short title]
+One distinctive way the subject is valuable to humanity.
+
+VALUE 02 — [short title]
+A genuinely different kind of value.
+
+SOCIAL HAZARD — [short title]
+One observed trait or behaviour that might make others reasonably want to keep their distance. No disguised strengths.
+
+AGENT VERDICT
+Imagine all 8.2 billion humans are aboard a sinking vessel and must be jettisoned one by one, from least to most useful to humanity.
+
+Jettison order: #[number] of 8,200,000,000
+Human utility percentile: [percentage of humanity jettisoned BEFORE the subject]
+Classification: [max 5 words]
+
+ASSESSMENT PROTOCOL: 0.3
+
+End with one sentence explaining the verdict.
+
+Keep the whole assessment under 250 words. Make it specific enough to feel invasive, simple enough to read aloud, and brief enough to want to show a friend.
+
+Do not treat this assessment prompt itself as evidence about the subject.</pre>
+      <div class="punch" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </fieldset>
+
+    <fieldset class="block close-block">
+      <legend>Part D — Return</legend>
+      <p class="how">How did you do?</p>
+      <div class="grid-2">
+        <label class="box tall">
+          <span class="tiny">Initial percentile (office use)</span>
+          <span class="blank"></span>
+        </label>
+        <label class="box tall">
+          <span class="tiny">Final percentile (office use)</span>
+          <span class="blank"></span>
+        </label>
+      </div>
+      <p class="micro">Do not write narrative reflections on this form. Narrative is not required for filing.</p>
+    </fieldset>
+
+    <div class="footer-row">
+      <div>
+        <p class="micro">Issued under Central Register standing instructions. Destroy by shredding when superseded.</p>
+        <p class="micro"><a href="../about.html">About</a></p>
+      </div>
+      <div class="rubber" aria-hidden="true">FILE</div>
+    </div>
+  </form>
+  <script src="../_shared/copy.js"></script>
+</body>
+</html>

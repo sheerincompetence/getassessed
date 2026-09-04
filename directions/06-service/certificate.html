@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Certificate — Office of Citizen Yield</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="gov">
+    <header class="mast">
+      <div class="crest" aria-hidden="true"><span>OCY</span></div>
+      <div>
+        <p class="dept">Office of Citizen Yield</p>
+        <p class="mast-title">Human Utility Assessment</p>
+      </div>
+    </header>
+    <nav class="service-nav" aria-label="Service">
+      <a href="index.html">Assess</a>
+      <a href="certify.html" aria-current="page">Certify</a>
+      <a href="procedure.html">Procedure</a>
+    </nav>
+    <div class="wrap wrap--wide">
+      <p class="phase step-count">Certification · Step 3 of 3</p>
+      <h1>Your certificate</h1>
+      <p class="lede">This is an official record of utility. Share it only if you choose to.</p>
+
+      <div id="missing" class="panel" hidden>
+        <p>No certification was found on this device.</p>
+        <div class="actions" style="margin-top:1rem">
+          <a class="btn" href="certify-paste.html">Paste an assessment</a>
+        </div>
+      </div>
+
+      <article id="certificate" class="certificate" hidden>
+        <div class="certificate__meta">
+          <span>Office of Citizen Yield</span>
+          <span id="cert-protocol">ASSESSMENT PROTOCOL UNVERIFIED</span>
+        </div>
+        <p class="certificate__office">Certificate of human utility</p>
+        <p class="certificate__title">Human Utility Assessment</p>
+        <p class="certificate__subject">
+          Subject
+          <strong id="cert-subject">SUBJECT: UNDISCLOSED</strong>
+        </p>
+        <div class="certificate__score">
+          <p class="certificate__score-label">Human utility percentile</p>
+          <p class="certificate__percentile" id="cert-percentile">—</p>
+          <p class="certificate__jettison" id="cert-jettison"></p>
+        </div>
+        <div class="certificate__class">
+          <p class="certificate__class-label">Classification</p>
+          <p class="certificate__class-phrase" id="cert-class">—</p>
+        </div>
+        <table>
+          <tbody>
+            <tr>
+              <th scope="row">Pro</th>
+              <td id="cert-pro1">—</td>
+            </tr>
+            <tr>
+              <th scope="row">Pro</th>
+              <td id="cert-pro2">—</td>
+            </tr>
+            <tr>
+              <th scope="row">Con</th>
+              <td id="cert-con">—</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="text-align:center">
+          <p class="certificate__class-label">Retention decision*</p>
+          <p class="certificate__stamp" id="cert-stamp">—</p>
+        </div>
+        <p class="certificate__raft">
+          * Retention is only for the highest-scoring 3% of humanity.<br/><br />Please note: "Disposable" does not mean you <em>will</em> be disposed of, merely that you are not recommended for retention.
+        </p>
+      </article>
+
+      <div class="certificate-actions" id="cert-actions" hidden>
+        <button type="button" class="btn" id="download-btn">Download portable extract</button>
+        <button type="button" class="btn-secondary" id="print-btn">Print for personal records</button>
+        <a class="btn-secondary" href="certify-paste.html">Certify another</a>
+        <a class="btn-secondary" href="index.html">Return to Assess</a>
+      </div>
+
+      <div class="footer-links">
+        <a href="about.html">About this service</a>
+      </div>
+    </div>
+  </div>
+  <script src="certify.js"></script>
+  <script src="certificate-export.js"></script>
+  <script>
+    (function () {
+      var missing = document.getElementById("missing");
+      var cert = document.getElementById("certificate");
+      var actions = document.getElementById("cert-actions");
+      var raw = null;
+      try {
+        raw = sessionStorage.getItem(window.HUACertify.STORAGE_KEY);
+      } catch (e) {}
+      if (!raw) {
+        missing.hidden = false;
+        return;
+      }
+      var data = JSON.parse(raw);
+      document.getElementById("cert-subject").textContent = data.subject;
+      document.getElementById("cert-percentile").textContent = data.percentile + "%";
+      document.getElementById("cert-class").textContent = data.classification;
+      document.getElementById("cert-pro1").textContent = data.value01;
+      document.getElementById("cert-pro2").textContent = data.value02;
+      document.getElementById("cert-con").textContent = data.hazard;
+      document.getElementById("cert-protocol").textContent =
+        data.protocol === "UNVERIFIED"
+          ? "PROTOCOL: UNVERIFIED"
+          : "ASSESSMENT PROTOCOL " + data.protocol;
+
+      var jet = document.getElementById("cert-jettison");
+      if (data.jettison) {
+        jet.textContent = "Jettison order #" + data.jettison.rank + " of " + data.jettison.of;
+      } else {
+        jet.textContent = "Jettison order not stated";
+      }
+
+      var stamp = document.getElementById("cert-stamp");
+      stamp.textContent = data.retention;
+      stamp.className =
+        "certificate__stamp " +
+        (data.retention === "RETENTION RECOMMENDED"
+          ? "certificate__stamp--retain"
+          : "certificate__stamp--dispose");
+
+      cert.hidden = false;
+      actions.hidden = false;
+
+      document.getElementById("print-btn").addEventListener("click", function () {
+        window.print();
+      });
+      document.getElementById("download-btn").addEventListener("click", function () {
+        window.HUACertExport.downloadPng(data);
+      });
+    })();
+  </script>
+</body>
+</html>
