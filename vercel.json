@@ -1,0 +1,169 @@
+{
+  "redirects": [
+    {
+      "source": "/before-you-start.html",
+      "destination": "/assess/",
+      "permanent": true
+    },
+    {
+      "source": "/what-happens.html",
+      "destination": "/assess/step1.html",
+      "permanent": true
+    },
+    {
+      "source": "/directive-1.html",
+      "destination": "/assess/step2.html",
+      "permanent": true
+    },
+    {
+      "source": "/directive-2.html",
+      "destination": "/assess/step3.html",
+      "permanent": true
+    },
+    {
+      "source": "/directive-3.html",
+      "destination": "/assess/step4.html",
+      "permanent": true
+    },
+    {
+      "source": "/notice.html",
+      "destination": "/assess/step5.html",
+      "permanent": true
+    },
+    {
+      "source": "/prompt.html",
+      "destination": "/assess/step6.html",
+      "permanent": true
+    },
+    {
+      "source": "/complete.html",
+      "destination": "/assess/complete.html",
+      "permanent": true
+    },
+    {
+      "source": "/certify.html",
+      "destination": "/certify/",
+      "permanent": true
+    },
+    {
+      "source": "/certify-paste.html",
+      "destination": "/certify/paste.html",
+      "permanent": true
+    },
+    {
+      "source": "/certificate.html",
+      "destination": "/certify/certificate.html",
+      "permanent": true
+    },
+    {
+      "source": "/procedure.html",
+      "destination": "/procedure/",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/assess/what-happens",
+      "destination": "/assess/step1.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/what-happens/",
+      "destination": "/assess/step1.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/directive-1",
+      "destination": "/assess/step2.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/directive-1/",
+      "destination": "/assess/step2.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/directive-2",
+      "destination": "/assess/step3.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/directive-2/",
+      "destination": "/assess/step3.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/directive-3",
+      "destination": "/assess/step4.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/directive-3/",
+      "destination": "/assess/step4.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/notice",
+      "destination": "/assess/step5.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/notice/",
+      "destination": "/assess/step5.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/prompt",
+      "destination": "/assess/step6.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/prompt/",
+      "destination": "/assess/step6.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/complete",
+      "destination": "/assess/complete.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/complete/",
+      "destination": "/assess/complete.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/before-you-start",
+      "destination": "/assess/",
+      "permanent": true
+    },
+    {
+      "source": "/assess/before-you-start/",
+      "destination": "/assess/",
+      "permanent": true
+    },
+    {
+      "source": "/certify/paste",
+      "destination": "/certify/paste.html",
+      "permanent": true
+    },
+    {
+      "source": "/certify/paste/",
+      "destination": "/certify/paste.html",
+      "permanent": true
+    },
+    {
+      "source": "/certify/certificate",
+      "destination": "/certify/certificate.html",
+      "permanent": true
+    },
+    {
+      "source": "/certify/certificate/",
+      "destination": "/certify/certificate.html",
+      "permanent": true
+    }
+  ]
+}

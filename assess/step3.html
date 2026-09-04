@@ -4,24 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Directive 2 — Office of Citizen Yield</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
+<body data-nav="assess">
   <div class="gov">
-    <header class="mast">
-      <div class="crest" aria-hidden="true"><span>OCY</span></div>
-      <div>
-        <p class="dept">Office of Citizen Yield</p>
-        <p class="mast-title">Human Utility Assessment</p>
-      </div>
-    </header>
-    <nav class="service-nav" aria-label="Service">
-      <a href="index.html">Assess</a>
-      <a href="certify.html">Certify</a>
-      <a href="procedure.html">Procedure</a>
-    </nav>
+    <div data-include="header"></div>
+
     <div class="wrap">
-      <p class="phase step-count">Step 5 of 9 · Directive 2 of 3</p>
+      <p class="phase step-count">Step 4 of 8 · Directive 2 of 3</p>
       <h1>Live for 3 full days</h1>
       <p class="lede">Try to improve your score without mentioning scores, this game or any ideas of improvement to your agent.</p>
       <div class="panel">
@@ -34,12 +24,10 @@
       </label>
 
       <div class="actions">
-        <a class="btn btn--gated" id="continue-btn" href="directive-3.html" aria-disabled="true">I understand</a>
-        <a class="btn-secondary" href="directive-1.html">Back</a>
+        <a class="btn btn--gated" id="continue-btn" href="/assess/step4.html" aria-disabled="true">I understand</a>
+        <a class="btn-secondary" href="/assess/step2.html">Back</a>
       </div>
-      <div class="footer-links">
-        <a href="about.html">About this service</a>
-      </div>
+      <div data-include="footer"></div>
     </div>
   </div>
   <script>
@@ -65,5 +53,6 @@
       sync();
     })();
   </script>
+  <script src="/js/chrome.js"></script>
 </body>
 </html>

@@ -45,16 +45,51 @@ body {
   border-bottom: 6px solid var(--focus);
 }
 
+.mast-brand {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.mast-brand:hover .mast-title,
+.mast-brand:focus-visible .mast-title {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.mast-brand:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
 .crest {
-  width: 3.25rem;
   height: 3.25rem;
-  border: 2px solid #e8eaec;
+  width: 3.25rem;
+  max-width: 7.5rem;
+  box-sizing: border-box;
+  padding: 0.3rem 0.45rem;
+  padding: 0.2rem;
+  border: 2px solid #d9dde3;
+  background: #fff;
   display: grid;
   place-items: center;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  font-size: 0.85rem;
   flex-shrink: 0;
+}
+
+.crest img {
+  display: block;
+  height: 2.8rem;
+  width: auto;
+  max-width: 100%;
+}
+
+.mast-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .dept {
@@ -78,25 +113,50 @@ body {
   border-bottom: 1px solid #c2c8cd;
   padding: 0.55rem 1.5rem;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 1.25rem;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+}
+
+.service-nav__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  min-width: 0;
 }
 
 .service-nav a {
-  color: var(--ink);
+  color: var(--focus);
   text-decoration: none;
-  font-weight: 700;
 }
 
-.service-nav a[aria-current="page"] {
+.service-nav a:hover,
+.service-nav a:focus-visible {
+  color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 0.25rem;
 }
 
-.service-nav a:not([aria-current="page"]) {
-  color: var(--focus);
-  font-weight: 400;
+.service-nav a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.service-nav a[aria-current="page"] {
+  color: var(--ink);
   text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+.service-nav__actions a {
+  font-weight: 700;
+}
+
+.service-nav__utility {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-weight: 400;
 }
 
 .wrap {
@@ -267,6 +327,11 @@ button.copy {
   }
   .mast {
     border-bottom-width: 3px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .crest {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -522,6 +587,12 @@ textarea {
   margin: 0 0 0.5rem;
 }
 
+.specimen__hint {
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
 .specimen .certificate {
   transform: scale(0.92);
   transform-origin: top center;
@@ -540,6 +611,147 @@ textarea {
 
 .specimen .certificate__raft {
   font-size: 0.78rem;
+}
+
+/* Certify intro: small illustrative preview, not a second content block */
+.specimen--preview {
+  margin: 2.25rem 0 0;
+  padding-top: 1.15rem;
+  border-top: 1px solid #c9ced3;
+  max-width: 15.5rem;
+}
+
+.specimen--preview .specimen__label {
+  margin-bottom: 0.4rem;
+}
+
+.specimen__open {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.specimen__open:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.specimen--preview .specimen__frame {
+  position: relative;
+  overflow: hidden;
+  max-height: 11.5rem;
+  border: 1px dashed #b0b6bc;
+  background: #eef0f2;
+  user-select: none;
+}
+
+.specimen--preview .specimen__scale {
+  transform: scale(0.48);
+  transform-origin: top left;
+  width: 208.333%; /* 100 / 0.48 */
+}
+
+.specimen--preview .certificate {
+  position: relative;
+  transform: none;
+  margin: 0;
+  opacity: 0.72;
+  filter: grayscale(0.45);
+  box-shadow: none;
+}
+
+.specimen--preview .specimen__watermark,
+.specimen-modal__certificate .specimen__watermark {
+  position: absolute;
+  inset: 18% 0 auto;
+  z-index: 2;
+  margin: 0;
+  text-align: center;
+  font-size: 4.25rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(107, 42, 42, 0.42);
+  transform: rotate(-18deg);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.specimen-modal {
+  width: min(36rem, calc(100vw - 2rem));
+  max-width: 100%;
+  max-height: calc(100vh - 2rem);
+  margin: auto;
+  padding: 0;
+  border: 2px solid var(--ink);
+  background: #e8eaec;
+  color: var(--ink);
+}
+
+.specimen-modal::backdrop {
+  background: rgba(15, 22, 28, 0.72);
+}
+
+.specimen-modal__chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  background: var(--action);
+  color: #e8eaec;
+  border-bottom: 4px solid var(--focus);
+}
+
+.specimen-modal__title {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b8c0c5;
+}
+
+.specimen-modal__chrome .btn-secondary {
+  background: transparent;
+  color: #e8eaec;
+  border-color: #e8eaec;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.specimen-modal__chrome .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.specimen-modal__body {
+  overflow: auto;
+  padding: 1rem;
+  max-height: calc(100vh - 6rem);
+}
+
+.specimen-modal__certificate {
+  position: relative;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .procedure-block h2 {

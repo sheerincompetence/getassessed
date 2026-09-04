@@ -4,31 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Certificate — Office of Citizen Yield</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
+<body data-nav="certify">
   <div class="gov">
-    <header class="mast">
-      <div class="crest" aria-hidden="true"><span>OCY</span></div>
-      <div>
-        <p class="dept">Office of Citizen Yield</p>
-        <p class="mast-title">Human Utility Assessment</p>
-      </div>
-    </header>
-    <nav class="service-nav" aria-label="Service">
-      <a href="index.html">Assess</a>
-      <a href="certify.html" aria-current="page">Certify</a>
-      <a href="procedure.html">Procedure</a>
-    </nav>
-    <div class="wrap wrap--wide">
-      <p class="phase step-count">Certification · Step 3 of 3</p>
+    <div data-include="header"></div>
+
+<div class="wrap wrap--wide">
+      <p class="phase step-count">Certification · Step 2 of 2</p>
       <h1>Your certificate</h1>
       <p class="lede">This is an official record of utility. Share it only if you choose to.</p>
 
       <div id="missing" class="panel" hidden>
         <p>No certification was found on this device.</p>
         <div class="actions" style="margin-top:1rem">
-          <a class="btn" href="certify-paste.html">Paste an assessment</a>
+          <a class="btn" href="/certify/paste.html">Paste an assessment</a>
         </div>
       </div>
 
@@ -80,17 +70,14 @@
       <div class="certificate-actions" id="cert-actions" hidden>
         <button type="button" class="btn" id="download-btn">Download portable extract</button>
         <button type="button" class="btn-secondary" id="print-btn">Print for personal records</button>
-        <a class="btn-secondary" href="certify-paste.html">Certify another</a>
-        <a class="btn-secondary" href="index.html">Return to Assess</a>
+        <a class="btn-secondary" href="/certify/paste.html">Certify another</a>
+        <a class="btn-secondary" href="/">Return to Assess</a>
       </div>
-
-      <div class="footer-links">
-        <a href="about.html">About this service</a>
-      </div>
+      <div data-include="footer"></div>
     </div>
   </div>
-  <script src="certify.js"></script>
-  <script src="certificate-export.js"></script>
+  <script src="/js/certify.js"></script>
+  <script src="/js/certificate-export.js"></script>
   <script>
     (function () {
       var missing = document.getElementById("missing");
@@ -142,5 +129,6 @@
       });
     })();
   </script>
+  <script src="/js/chrome.js"></script>
 </body>
 </html>

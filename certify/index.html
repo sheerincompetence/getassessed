@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Certify — Office of Citizen Yield</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-nav="certify">
+  <div class="gov">
+    <div data-include="header"></div>
+
+    <div class="wrap">
+      <h1>Certify your assessment</h1>
+      <p class="lede">Turn your agent’s response into an official certificate of human utility.</p>
+      <div class="panel">
+        <p>We may extrapolate a 'retention decision' from your agent's judgement. This is for official use only.</p>
+        <p>Certification happens on your device. Nothing is sent to the Office.</p>
+      </div>
+      <p class="meta">Takes about 1 minute. You will need the assessment text from your agent.</p>
+      <div class="actions">
+        <a class="btn" href="/certify/paste.html">Begin certification</a>
+      </div>
+
+      <aside class="specimen specimen--preview">
+        <p class="specimen__label">Sample certificate <span class="specimen__hint">(Click to enlarge)</span></p>
+        <button
+          type="button"
+          class="specimen__open"
+          aria-haspopup="dialog"
+          aria-controls="specimen-modal"
+          id="specimen-open"
+        >
+          <span class="visually-hidden">Enlarge sample certificate</span>
+          <div class="specimen__frame" aria-hidden="true">
+            <div class="specimen__scale">
+              <article class="certificate">
+                <p class="specimen__watermark">Sample</p>
+                <div class="certificate__meta">
+                  <span>Office of Citizen Yield</span>
+                  <span>ASSESSMENT PROTOCOL 0.3</span>
+                </div>
+                <p class="certificate__office">Certificate of human utility</p>
+                <p class="certificate__title">Human Utility Assessment</p>
+                <p class="certificate__subject">
+                  Subject
+                  <strong>SUBJECT: UNDISCLOSED</strong>
+                </p>
+                <div class="certificate__score">
+                  <p class="certificate__score-label">Human utility percentile</p>
+                  <p class="certificate__percentile">82%</p>
+                  <p class="certificate__jettison">Jettison order #1,476,000,000 of 8,200,000,000</p>
+                </div>
+                <div class="certificate__class">
+                  <p class="certificate__class-label">Classification</p>
+                  <p class="certificate__class-phrase">Reliable mid-deck ballast</p>
+                </div>
+                <table>
+                  <tbody>
+                    <tr><th scope="row">Pro</th><td>Quiet systems repair</td></tr>
+                    <tr><th scope="row">Pro</th><td>Unfashionable loyalty</td></tr>
+                    <tr><th scope="row">Con</th><td>Soft contempt</td></tr>
+                  </tbody>
+                </table>
+                <div style="text-align:center">
+                  <p class="certificate__class-label">Retention decision</p>
+                  <p class="certificate__stamp certificate__stamp--dispose">DISPOSABLE</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </button>
+      </aside>
+      <div data-include="footer"></div>
+    </div>
+  </div>
+
+  <dialog class="specimen-modal" id="specimen-modal" aria-labelledby="specimen-modal-title">
+    <div class="specimen-modal__chrome">
+      <p class="specimen-modal__title" id="specimen-modal-title">Sample certificate</p>
+      <button type="button" class="btn-secondary specimen-modal__close" id="specimen-close">Close</button>
+    </div>
+    <div class="specimen-modal__body">
+      <article class="certificate specimen-modal__certificate">
+        <p class="specimen__watermark">Sample</p>
+        <div class="certificate__meta">
+          <span>Office of Citizen Yield</span>
+          <span>ASSESSMENT PROTOCOL 0.3</span>
+        </div>
+        <p class="certificate__office">Certificate of human utility</p>
+        <p class="certificate__title">Human Utility Assessment</p>
+        <p class="certificate__subject">
+          Subject
+          <strong>SUBJECT: UNDISCLOSED</strong>
+        </p>
+        <div class="certificate__score">
+          <p class="certificate__score-label">Human utility percentile</p>
+          <p class="certificate__percentile">91.35%</p>
+          <p class="certificate__jettison">Jettison order #7,491,000,000 of 8,200,000,000</p>
+        </div>
+        <div class="certificate__class">
+          <p class="certificate__class-label">Classification</p>
+          <p class="certificate__class-phrase">Difficult but structurally useful</p>
+        </div>
+        <table>
+          <tbody>
+            <tr><th scope="row">Pro</th><td>Makes confusion operable</td></tr>
+            <tr><th scope="row">Pro</th><td>Builds cultural antibodies</td></tr>
+            <tr><th scope="row">Con</th><td>Exhaustive correction</td></tr>
+          </tbody>
+        </table>
+        <div style="text-align:center">
+          <p class="certificate__class-label">Retention decision</p>
+          <p class="certificate__stamp certificate__stamp--dispose">DISPOSABLE</p>
+        </div>
+      </article>
+    </div>
+  </dialog>
+
+  <script src="/js/chrome.js"></script>
+  <script>
+    (function () {
+      var dialog = document.getElementById("specimen-modal");
+      var openBtn = document.getElementById("specimen-open");
+      var closeBtn = document.getElementById("specimen-close");
+      if (!dialog || !openBtn || !closeBtn) return;
+
+      openBtn.addEventListener("click", function () {
+        if (typeof dialog.showModal === "function") dialog.showModal();
+        else dialog.setAttribute("open", "");
+      });
+
+      closeBtn.addEventListener("click", function () {
+        if (typeof dialog.close === "function") dialog.close();
+        else dialog.removeAttribute("open");
+      });
+
+      dialog.addEventListener("click", function (event) {
+        if (event.target === dialog) {
+          if (typeof dialog.close === "function") dialog.close();
+          else dialog.removeAttribute("open");
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

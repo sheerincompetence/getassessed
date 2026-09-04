@@ -57,7 +57,7 @@ The fully in-world site page that publishes the three instructions and assessmen
 _Avoid_: Game mode, start screen
 
 **About**:
-A separate, out-of-world page linked discreetly from Assess (and other service pages). It keeps Office of Citizen Yield mast and chrome; only the content steps out of fiction. It identifies Human Utility Assessment as an art-game by Andrew Sheerin, may link to his artist site, and briefly connects existing algorithmic assessments in employment, lending and similar infrastructure to the prospect of personal AI agents making broader judgments about human worth. Its key framing is that the work “asks what happens when machine observation turns into judgement and evaluation.” Contact is `contact@getassessed.org`. It states that Certify processes paste only in the browser. It does not interpret the questions players are meant to discover.
+A separate, out-of-world page at `/about/`, linked discreetly from Assess (and other service pages). It keeps Office of Citizen Yield mast and chrome; only the content steps out of fiction. It identifies Human Utility Assessment as an art-game by Andrew Sheerin, may link to his artist site, and briefly connects existing algorithmic assessments in employment, lending and similar infrastructure to the prospect of personal AI agents making broader judgments about human worth. Its key framing is that the work “asks what happens when machine observation turns into judgement and evaluation.” Contact is `contact@getassessed.org`. It states that Certify processes paste only in the browser. It does not interpret the questions players are meant to discover.
 _Avoid_: Artist statement, explanation, institutional notice
 
 **Procedure**:

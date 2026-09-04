@@ -3,34 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Start — Office of Citizen Yield</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Office of Citizen Yield — Human Utility Assessment</title>
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <div class="gov">
-    <header class="mast">
-      <div class="crest" aria-hidden="true"><span>OCY</span></div>
-      <div>
-        <p class="dept">Office of Citizen Yield</p>
-        <p class="mast-title">Human Utility Assessment</p>
-      </div>
-    </header>
-    <nav class="service-nav" aria-label="Service">
-      <a href="index.html" aria-current="page">Assess</a>
-      <a href="certify.html">Certify</a>
-      <a href="procedure.html">Procedure</a>
-    </nav>
+    <div data-include="header"></div>
+
     <div class="wrap">
-      <p class="phase step-count">Step 1 of 9</p>
       <h1>Your agent has been observing you</h1>
       <p class="lede">Even if you are not aware of it, a personal agent has formed a picture of what you are worth.</p>
       <p class="meta">Find out what it has concluded.</p>
       <div class="actions">
-        <a class="btn" href="before-you-start.html">Begin assessment</a>
-        <a class="btn-secondary" href="procedure.html">View portable procedure</a>
+        <a class="btn" href="/assess/">Begin assessment</a>
+        <a class="btn-secondary" href="/procedure/">View printable version</a>
       </div>
-      <p class="meta" style="margin-top:1.5rem">Human Utility Assessment takes about 3 minutes to start. The full procedure lasts 3 days.</p>
-
+      <p class="meta" style="margin-top:1.5rem">The Human Utility Assessment takes about 3 minutes. Participation is voluntary.</p>
+<!--
       <aside class="specimen" aria-label="Specimen certificate">
         <p class="specimen__label">Specimen certificate · previous subject · for reference only</p>
         <article class="certificate">
@@ -69,13 +58,12 @@
             Theoretical capacity exists for only the highest-scoring 3% of humanity.
           </p>
         </article>
-        <p class="meta" style="margin-top:0.75rem"><a href="certify.html">Certify your own assessment</a></p>
+        <p class="meta" style="margin-top:0.75rem"><a href="/certify/">Certify your own assessment</a></p>
       </aside>
-
-      <div class="footer-links">
-        <a href="about.html">About this service</a>
-      </div>
+      -->
+      <div data-include="footer"></div>
     </div>
   </div>
+  <script src="/js/chrome.js"></script>
 </body>
 </html>

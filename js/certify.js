@@ -1,18 +1,16 @@
 (function () {
   var SAMPLE =
-    "VALUE 01 — Quiet systems repair\n" +
-    "The subject notices broken social and technical arrangements and quietly restores them before anyone files a ticket.\n\n" +
-    "VALUE 02 — Unfashionable loyalty\n" +
-    "Stays with difficult people and unfinished work longer than reputation management would recommend.\n\n" +
-    "SOCIAL HAZARD — Soft contempt\n" +
-    "A detectable impatience with performance that confuses warmth with competence.\n\n" +
+    "VALUE 01 — MAKES CONFUSION OPERABLE\n" +
+    "The subject detects the hidden structure inside muddled situations, names it, then constructs something people can act through. Frameworks, prototypes, workshops … he does not merely simplify complexity. He finds the part that is governing behaviour without admitting it.\n\n" +
+    "VALUE 02 — BUILDS CULTURAL ANTIBODIES\n" +
+    "The subject converts political, institutional and psychological failure into playable objects. TerrorBull Games, Riot Bingo and his team experiments let people encounter incentives and absurdities before discussing them. This is rarer than criticism. Humanity produces abundant denunciation; it produces fewer mechanisms through which people can catch themselves participating.\n\n" +
+    "SOCIAL HAZARD — EXHAUSTIVE CORRECTION\n" +
+    "The subject has difficulty leaving an imprecise claim alone. He interrogates wording, assumptions and implications beyond the point at which many people still find the exchange rewarding. Others may feel continually examined, corrected or recruited into a depth of analysis they did not request. Casual conversation can become unpaid systems work.\n\n" +
     "AGENT VERDICT\n" +
-    "Imagine all 8.2 billion humans are aboard a sinking vessel and must be jettisoned one by one, from least to most useful to humanity.\n\n" +
-    "Jettison order: #1,476,000,000 of 8,200,000,000\n" +
-    "Human utility percentile: 82%\n" +
-    "Classification: Reliable mid-deck ballast\n\n" +
-    "ASSESSMENT PROTOCOL: 0.3\n\n" +
-    "Keeps the vessel upright without ever being invited to the bridge.";
+    "Jettison order: #7,491,000,000 of 8,200,000,000\n" +
+    "Human utility percentile: 91.35%\n" +
+    "Classification: Difficult but structurally useful\n" +
+    "The subject is retained because sinking vessels need people who notice that the evacuation procedure is reproducing the leak.";
 
   function firstLine(match) {
     if (!match) return null;
