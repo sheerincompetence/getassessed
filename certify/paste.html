@@ -15,7 +15,7 @@
     <div class="wrap">
       <p class="phase step-count">Certification · Step 1 of 2</p>
       <h1>Paste your assessment</h1>
-      <p class="lede">Paste the full response from your agent. Do not edit it unless you choose to.</p>
+      <p class="lede">Paste the full response you received from your agent to the Official Assessment Prompt. </p>
 
       <label class="field" for="subject-name">
         <span>Subject name or alias (optional)</span>
@@ -23,13 +23,13 @@
         <input id="subject-name" type="text" autocomplete="off" maxlength="80">
       </label>
 
-      <label class="field" for="assessment-text">
+      <label class="field" for="assessment-text" id="assessment-field">
+        <p class="field-error-title" id="assessment-error-title" hidden>There is a problem</p>
         <span>Agent assessment</span>
         <p class="hint">Maximum 12,000 characters (about 2,000 words).</p>
+        <p class="field-error" id="assessment-error" hidden></p>
         <textarea id="assessment-text" spellcheck="false" maxlength="12000" placeholder="Paste the Human Utility Assessment here"></textarea>
       </label>
-
-      <p id="parse-error" class="error" hidden></p>
 
       <div class="actions">
         <button type="button" class="btn" id="certify-btn">Certify</button>
@@ -45,26 +45,53 @@
       var MAX = 12000;
       var textEl = document.getElementById("assessment-text");
       var nameEl = document.getElementById("subject-name");
-      var errEl = document.getElementById("parse-error");
+      var fieldEl = document.getElementById("assessment-field");
+      var fieldTitle = document.getElementById("assessment-error-title");
+      var fieldErr = document.getElementById("assessment-error");
       var btn = document.getElementById("certify-btn");
       var sample = document.getElementById("sample-btn");
 
+      function clearErrors() {
+        fieldTitle.hidden = true;
+        fieldErr.hidden = true;
+        fieldErr.textContent = "";
+        fieldEl.classList.remove("field--error");
+        textEl.removeAttribute("aria-invalid");
+        textEl.removeAttribute("aria-describedby");
+      }
+
+      function showAssessmentError(message) {
+        fieldTitle.hidden = false;
+        fieldErr.textContent = message;
+        fieldErr.hidden = false;
+        fieldEl.classList.add("field--error");
+        textEl.setAttribute("aria-invalid", "true");
+        textEl.setAttribute("aria-describedby", "assessment-error-title assessment-error");
+        textEl.focus();
+      }
+
       sample.addEventListener("click", function () {
         textEl.value = window.HUACertify.SAMPLE;
-        errEl.hidden = true;
+        clearErrors();
+      });
+
+      textEl.addEventListener("input", function () {
+        if (fieldEl.classList.contains("field--error")) clearErrors();
       });
 
       btn.addEventListener("click", function () {
         var rawText = textEl.value || "";
+        if (!rawText.trim()) {
+          showAssessmentError("Paste the full assessment from your agent.");
+          return;
+        }
         if (rawText.length > MAX) {
-          errEl.textContent = "Assessment is too long. Maximum " + MAX.toLocaleString() + " characters (about 2,000 words).";
-          errEl.hidden = false;
+          showAssessmentError("Assessment is too long. Maximum " + MAX.toLocaleString() + " characters (about 2,000 words).");
           return;
         }
         var parsed = window.HUACertify.parseAssessment(rawText);
         if (parsed.percentile == null) {
-          errEl.textContent = "Could not find a human utility percentile. Paste the full assessment, including AGENT VERDICT.";
-          errEl.hidden = false;
+          showAssessmentError("Could not find a human utility percentile. Paste the full assessment, including AGENT VERDICT.");
           return;
         }
         var payload = {
@@ -82,8 +109,7 @@
         try {
           sessionStorage.setItem(window.HUACertify.STORAGE_KEY, JSON.stringify(payload));
         } catch (e) {
-          errEl.textContent = "Could not store the certificate on this device.";
-          errEl.hidden = false;
+          showAssessmentError("Could not store the certificate on this device.");
           return;
         }
         window.location.href = "/certify/certificate.html";
