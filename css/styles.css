@@ -325,6 +325,7 @@ button.copy {
   font-weight: 700;
   padding: 0.65rem 1rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .footer-links {
@@ -620,7 +621,7 @@ textarea {
   margin: 0 0 0.55rem;
   padding: 0;
   border-bottom: 0;
-  font-size: 0.58rem;
+  font-size: 0.60rem;
   line-height: 1.3;
   letter-spacing: 0.02em;
   color: var(--slip-mute);
@@ -629,7 +630,7 @@ textarea {
 
 .certificate__official-rule {
   color: var(--slip-ink);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: none;
   font-size: inherit;
@@ -723,7 +724,7 @@ textarea {
 
 .certificate__footnote {
   margin: 1.1rem 0 0 0;
-  font-size: 0.58rem;
+  font-size: 0.6rem;
   line-height: 1.35;
   color: var(--slip-mute);
   font-weight: 400;

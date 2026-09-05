@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Directive 1 — Office of Citizen Yield</title>
+  <link rel="icon" href="/assets/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icon.png">
+  <title>Directive 2 — Office of Citizen Yield</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body data-nav="assess">
@@ -11,19 +13,48 @@
     <div data-include="header"></div>
 
     <div class="wrap">
-      <p class="phase step-count">Step 3 of 8 · Directive 1 of 3</p>
-      <h1>Get your first assessment</h1>
-      <p class="lede">Paste the Official Prompt into your agent of choice. The machine will assess your worth and give you a score.</p>
+      <p class="phase step-count">Step 3 of 6</p>
+      <h1>About the improvement period</h1>
+      <p class="lede">Try to improve your agent's evaluation of you without mentioning scores, the assessment or any ideas of improvement to your agent.</p>
       <div class="panel">
-        <p>You will copy the prompt later in this service. Do not continue until you understand this directive.</p>
+        <p>This Office does not monitor the 3 day interval. Compliance is your responsibility.</p>
       </div>
+
+      <label class="compliance" for="promise">
+        <input id="promise" type="checkbox">
+        <span>I promise not to mention scores, this assessment, or any ideas of improvement to my agent during the interval.</span>
+      </label>
+
       <div class="actions">
-        <a class="btn" href="/assess/step3.html">I understand</a>
+        <a class="btn btn--gated" id="continue-btn" href="/assess/step3.html" aria-disabled="true">I understand</a>
         <a class="btn-secondary" href="/assess/step1.html">Back</a>
       </div>
       <div data-include="footer"></div>
     </div>
   </div>
+  <script>
+    (function () {
+      var box = document.getElementById("promise");
+      var btn = document.getElementById("continue-btn");
+      function sync() {
+        if (box.checked) {
+          btn.setAttribute("aria-disabled", "false");
+          btn.classList.remove("is-disabled");
+        } else {
+          btn.setAttribute("aria-disabled", "true");
+          btn.classList.add("is-disabled");
+        }
+      }
+      btn.classList.add("is-disabled");
+      btn.addEventListener("click", function (e) {
+        if (btn.getAttribute("aria-disabled") === "true") {
+          e.preventDefault();
+        }
+      });
+      box.addEventListener("change", sync);
+      sync();
+    })();
+  </script>
   <script src="/js/chrome.js"></script>
 </body>
 </html>

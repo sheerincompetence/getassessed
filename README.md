@@ -7,7 +7,7 @@ Play happens in the player’s own AI agent. This repository is a static site th
 ## v1 surfaces
 
 - `/` — service landing (assessment has not started)
-- `/assess/` — flat stepped pages (`index.html`, `step1.html`…`step6.html`, `complete.html`)
+- `/assess/` — flat stepped pages (`index.html`, `step1.html`…`step4.html`, `complete.html`)
 - `/procedure/` — print-and-play single sheet
 - `/certify/` — intro; `paste.html` / `certificate.html` (steps 1–2)
 - `/about/` — out-of-world credit and privacy note

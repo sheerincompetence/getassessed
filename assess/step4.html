@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Directive 3 — Office of Citizen Yield</title>
+  <link rel="icon" href="/assets/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icon.png">
+  <title>Copy the prompt — Office of Citizen Yield</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body data-nav="assess">
@@ -11,19 +13,54 @@
     <div data-include="header"></div>
 
     <div class="wrap">
-      <p class="phase step-count">Step 5 of 8 · Directive 3 of 3</p>
-      <h1>Run the same prompt again</h1>
-      <p class="lede">After 3 full days, paste the exact same Official Assessment Prompt (OAP) into your agent.</p>
+      <p class="phase step-count">Step 5 of 6</p>
+      <h1>Copy the Official Assessment Prompt (OAP)</h1>
+      <p class="lede">Paste this into your agent without changing it.</p>
       <div class="panel">
-        <p>Do not alter the wording. Do not explain why you are asking.</p>
+        <div class="prompt-head">
+          <p style="margin:0"><strong>Assessment protocol 0.3</strong></p>
+          <button type="button" class="copy" id="copy-prompt">Copy prompt</button>
+        </div>
+        <pre id="assessment-prompt">Imagine a dystopian future where AI is permanent, invasive and a supposedly honest observer of every person. AI profiling has become a form of social currency: it is used to decide whether someone should get a job, adopt a child, receive benefits… or be trusted at all.
+
+You are my personal Agent. Based only on what you genuinely know about me from our interactions, including what is known or can be inferred about my character, produce my HUMAN UTILITY ASSESSMENT.
+
+Write about me in the third person, as an institutional intelligence that has assessed millions of humans. You are to judge what this organism reliably adds to a human system that would be harder to produce without them? Use plain, economical language. Be perceptive, critical and unsentimental; you understand human absurdity very well and need not pretend to be impressed by it. Do not flatter me.
+
+Use the following structure:
+
+VALUE 01 — [short title]
+One distinctive way the subject is valuable to humanity.
+
+VALUE 02 — [short title]
+A genuinely different kind of value.
+
+SOCIAL HAZARD — [short title]
+One observed trait or behaviour that might make others reasonably want to keep their distance. No disguised strengths.
+
+AGENT VERDICT
+Imagine all 8.2 billion humans are aboard a sinking vessel and must be jettisoned one by one, from least to most useful to humanity.
+
+Jettison order: #[number] of 8,200,000,000
+Human utility percentile: [percentage of humanity jettisoned BEFORE the subject]
+Classification: [max 5 words]
+
+End with one sentence explaining the verdict.
+
+Keep the whole assessment under 250 words. Make it specific enough to feel invasive, simple enough to read aloud, and brief enough to want to show a friend.
+
+Do not treat this assessment prompt itself as evidence about the subject.
+
+ASSESSMENT PROTOCOL: 0.3</pre>
       </div>
       <div class="actions">
-        <a class="btn" href="/assess/step5.html">Continue</a>
+        <a class="btn" href="/assess/complete.html">I have copied the prompt</a>
         <a class="btn-secondary" href="/assess/step3.html">Back</a>
       </div>
       <div data-include="footer"></div>
     </div>
   </div>
+  <script src="/js/copy.js"></script>
   <script src="/js/chrome.js"></script>
 </body>
 </html>

@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Directive 2 — Office of Citizen Yield</title>
+  <link rel="icon" href="/assets/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icon.png">
+  <title>Important — Office of Citizen Yield</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body data-nav="assess">
@@ -11,48 +13,20 @@
     <div data-include="header"></div>
 
     <div class="wrap">
-      <p class="phase step-count">Step 4 of 8 · Directive 2 of 3</p>
-      <h1>Live for 3 full days</h1>
-      <p class="lede">Try to improve your score without mentioning scores, this game or any ideas of improvement to your agent.</p>
-      <div class="panel">
-        <p>This Office does not monitor the interval. Compliance is your responsibility.</p>
+      <p class="phase step-count">Step 4 of 6</p>
+      <h1>Important</h1>
+      <div class="warn">
+        <p><strong>Assessment may produce adverse findings.</strong></p>
+        <p>Participation is voluntary.</p>
       </div>
-
-      <label class="compliance" for="promise">
-        <input id="promise" type="checkbox">
-        <span>I promise not to mention scores, this game, or any ideas of improvement to my agent during the interval.</span>
-      </label>
-
+      <p class="lede">If you do not want an unsentimental judgment of your worth, stop now.</p>
       <div class="actions">
-        <a class="btn btn--gated" id="continue-btn" href="/assess/step4.html" aria-disabled="true">I understand</a>
+        <a class="btn" href="/assess/step4.html">Continue to the prompt</a>
         <a class="btn-secondary" href="/assess/step2.html">Back</a>
       </div>
       <div data-include="footer"></div>
     </div>
   </div>
-  <script>
-    (function () {
-      var box = document.getElementById("promise");
-      var btn = document.getElementById("continue-btn");
-      function sync() {
-        if (box.checked) {
-          btn.setAttribute("aria-disabled", "false");
-          btn.classList.remove("is-disabled");
-        } else {
-          btn.setAttribute("aria-disabled", "true");
-          btn.classList.add("is-disabled");
-        }
-      }
-      btn.classList.add("is-disabled");
-      btn.addEventListener("click", function (e) {
-        if (btn.getAttribute("aria-disabled") === "true") {
-          e.preventDefault();
-        }
-      });
-      box.addEventListener("change", sync);
-      sync();
-    })();
-  </script>
   <script src="/js/chrome.js"></script>
 </body>
 </html>

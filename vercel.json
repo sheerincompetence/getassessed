@@ -17,22 +17,22 @@
     },
     {
       "source": "/directive-2.html",
-      "destination": "/assess/step3.html",
+      "destination": "/assess/step2.html",
       "permanent": true
     },
     {
       "source": "/directive-3.html",
-      "destination": "/assess/step4.html",
+      "destination": "/assess/step3.html",
       "permanent": true
     },
     {
       "source": "/notice.html",
-      "destination": "/assess/step5.html",
+      "destination": "/assess/step3.html",
       "permanent": true
     },
     {
       "source": "/prompt.html",
-      "destination": "/assess/step6.html",
+      "destination": "/assess/step4.html",
       "permanent": true
     },
     {
@@ -87,42 +87,42 @@
     },
     {
       "source": "/assess/directive-2",
-      "destination": "/assess/step3.html",
+      "destination": "/assess/step2.html",
       "permanent": true
     },
     {
       "source": "/assess/directive-2/",
-      "destination": "/assess/step3.html",
+      "destination": "/assess/step2.html",
       "permanent": true
     },
     {
       "source": "/assess/directive-3",
-      "destination": "/assess/step4.html",
+      "destination": "/assess/step3.html",
       "permanent": true
     },
     {
       "source": "/assess/directive-3/",
-      "destination": "/assess/step4.html",
+      "destination": "/assess/step3.html",
       "permanent": true
     },
     {
       "source": "/assess/notice",
-      "destination": "/assess/step5.html",
+      "destination": "/assess/step3.html",
       "permanent": true
     },
     {
       "source": "/assess/notice/",
-      "destination": "/assess/step5.html",
+      "destination": "/assess/step3.html",
       "permanent": true
     },
     {
       "source": "/assess/prompt",
-      "destination": "/assess/step6.html",
+      "destination": "/assess/step4.html",
       "permanent": true
     },
     {
       "source": "/assess/prompt/",
-      "destination": "/assess/step6.html",
+      "destination": "/assess/step4.html",
       "permanent": true
     },
     {
@@ -163,6 +163,36 @@
     {
       "source": "/certify/certificate/",
       "destination": "/certify/certificate.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/step5.html",
+      "destination": "/assess/step3.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/step6.html",
+      "destination": "/assess/step4.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/step5",
+      "destination": "/assess/step3.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/step5/",
+      "destination": "/assess/step3.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/step6",
+      "destination": "/assess/step4.html",
+      "permanent": true
+    },
+    {
+      "source": "/assess/step6/",
+      "destination": "/assess/step4.html",
       "permanent": true
     }
   ]
