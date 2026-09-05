@@ -10,7 +10,7 @@
   <div class="gov">
     <div data-include="header"></div>
 
-<div class="wrap wrap--wide">
+    <div class="wrap wrap--wide">
       <p class="phase step-count">Certification · Step 2 of 2</p>
       <h1>Your certificate</h1>
       <p class="lede">This is an official record of utility. Share it only if you choose to.</p>
@@ -24,8 +24,14 @@
 
       <article id="certificate" class="certificate" hidden>
         <div class="certificate__meta">
-          <span>Office of Citizen Yield</span>
-          <span id="cert-protocol">ASSESSMENT PROTOCOL UNVERIFIED</span>
+          <div class="certificate__brand">
+            <img class="certificate__crest" src="/assets/logo-mark.png" alt="">
+            <span class="certificate__dept">Office of Citizen Yield</span>
+          </div>
+          <div class="certificate__meta-aside">
+            <span class="certificate__protocol" id="cert-protocol">PROTOCOL: UNVERIFIED</span>
+            <span class="certificate__url">getassessed.org</span>
+          </div>
         </div>
         <p class="certificate__office">Certificate of human utility</p>
         <p class="certificate__title">Human Utility Assessment</p>
@@ -58,20 +64,34 @@
             </tr>
           </tbody>
         </table>
-        <div style="text-align:center">
-          <p class="certificate__class-label">Retention decision*</p>
-          <p class="certificate__stamp" id="cert-stamp">—</p>
+
+        <div class="certificate__backoffice">
+          <div class="certificate__backoffice-head">
+            <span>OCY / INT / RET-01</span>
+            <span class="certificate__official-rule">For official use only</span>
+          </div>
+
+          <div class="certificate__retention">
+            <p class="certificate__retention-label">Retention decision</p>
+            <div class="certificate__checks" role="group" aria-label="Retention decision">
+              <div class="certificate__check">
+                <span class="certificate__box" id="cert-box-retain" aria-hidden="true"></span>
+                <span class="certificate__check-caption">Retain</span>
+              </div>
+              <div class="certificate__check">
+                <span class="certificate__box" id="cert-box-dispose" aria-hidden="true"></span>
+                <span class="certificate__check-caption">Disposable*</span>
+              </div>
+            </div>
+          </div>
+          <p class="certificate__footnote">* 'Disposable' does not mean you <strong>will</strong> be disposed of, merely that you are not recommended for retention.</p>
         </div>
-        <p class="certificate__raft">
-          * Retention is only for the highest-scoring 3% of humanity.<br/><br />Please note: "Disposable" does not mean you <em>will</em> be disposed of, merely that you are not recommended for retention.
-        </p>
       </article>
 
       <div class="certificate-actions" id="cert-actions" hidden>
         <button type="button" class="btn" id="download-btn">Download portable extract</button>
-        <button type="button" class="btn-secondary" id="print-btn">Print for personal records</button>
+        <button type="button" class="btn-secondary" id="print-btn">Print certificate</button>
         <a class="btn-secondary" href="/certify/paste.html">Certify another</a>
-        <a class="btn-secondary" href="/">Return to Assess</a>
       </div>
       <div data-include="footer"></div>
     </div>
@@ -110,13 +130,11 @@
         jet.textContent = "Jettison order not stated";
       }
 
-      var stamp = document.getElementById("cert-stamp");
-      stamp.textContent = data.retention;
-      stamp.className =
-        "certificate__stamp " +
-        (data.retention === "RETENTION RECOMMENDED"
-          ? "certificate__stamp--retain"
-          : "certificate__stamp--dispose");
+      var retain = data.retention === "RETENTION RECOMMENDED";
+      document.getElementById("cert-box-retain").classList.toggle("is-marked", retain);
+      document.getElementById("cert-box-dispose").classList.toggle("is-marked", !retain);
+      document.getElementById("cert-box-retain").setAttribute("aria-label", retain ? "Retain: marked" : "Retain: unmarked");
+      document.getElementById("cert-box-dispose").setAttribute("aria-label", retain ? "Disposable: unmarked" : "Disposable: marked");
 
       cert.hidden = false;
       actions.hidden = false;
