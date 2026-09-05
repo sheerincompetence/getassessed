@@ -1,4 +1,34 @@
 (function () {
+  // Vercel Web Analytics (static HTML). Script only resolves on Vercel deploys.
+  window.va =
+    window.va ||
+    function () {
+      (window.vaq = window.vaq || []).push(arguments);
+    };
+
+  window.HUATrack = function (name, data) {
+    if (!name || typeof window.va !== "function") return;
+    var payload = { name: name };
+    if (data) payload.data = data;
+    window.va("event", payload);
+  };
+
+  if (!document.querySelector('script[data-vercel-insights]')) {
+    var s = document.createElement("script");
+    s.defer = true;
+    s.src = "/_vercel/insights/script.js";
+    s.setAttribute("data-vercel-insights", "1");
+    document.head.appendChild(s);
+  }
+
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest("[data-track]");
+    if (!el) return;
+    window.HUATrack(el.getAttribute("data-track"));
+  });
+})();
+
+(function () {
   var CACHE_PREFIX = "hua-include-v1:";
 
   function markNav() {

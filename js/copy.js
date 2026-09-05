@@ -4,6 +4,9 @@
     if (!el) return;
     var text = el.innerText;
     function done() {
+      if (typeof window.HUATrack === "function") {
+        window.HUATrack("prompt_copied");
+      }
       var btn = document.getElementById("copy-prompt");
       if (!btn) return;
       var prev = btn.textContent;
