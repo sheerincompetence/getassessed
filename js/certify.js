@@ -56,7 +56,7 @@
 
   function subjectName(raw) {
     var name = (raw || "").trim();
-    return name ? name : "SUBJECT: UNDISCLOSED";
+    return name ? name.toUpperCase() : "SUBJECT: UNDISCLOSED";
   }
 
   window.HUACertify = {

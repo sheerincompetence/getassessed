@@ -541,6 +541,7 @@ textarea {
   font-size: 1.35rem;
   letter-spacing: -0.02em;
   margin-top: 0.15rem;
+  text-transform: uppercase;
 }
 
 .certificate__score {

@@ -97,7 +97,7 @@
     ctx.fillText("Subject", 70, 330);
     ctx.fillStyle = "#1f2428";
     ctx.font = "bold 44px Helvetica, Arial, sans-serif";
-    ctx.fillText(data.subject, 70, 385);
+    ctx.fillText(String(data.subject || "").toUpperCase(), 70, 385);
 
     ctx.strokeStyle = "#2f3a42";
     ctx.lineWidth = 4;
