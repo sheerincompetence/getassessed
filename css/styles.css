@@ -302,6 +302,7 @@ pre {
   font-family: "Courier New", Courier, monospace;
   font-size: 0.78rem;
   line-height: 1.4;
+  color: #0b0c0c;
   background: #eef0f2;
   border: 1px solid #c9ced3;
   padding: 1rem;
@@ -1018,6 +1019,7 @@ textarea {
 
 .procedure-sheet pre {
   max-height: none;
+  margin-top: 0;
 }
 
 .procedure-actions {

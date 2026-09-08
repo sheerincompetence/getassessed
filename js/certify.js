@@ -14,7 +14,11 @@
 
   function firstLine(match) {
     if (!match) return null;
-    return match[1].replace(/\s+/g, " ").trim();
+    return match[1]
+      .replace(/\s+/g, " ")
+      .trim()
+      .replace(/^[*_`]+|[*_`]+$/g, "")
+      .trim();
   }
 
   function parseAssessment(text) {

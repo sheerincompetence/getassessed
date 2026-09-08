@@ -78,7 +78,7 @@
   }
 
   // Sync path when cache is warm: inject before first paint when possible
-  ["header", "footer"].forEach(function (name) {
+  ["header", "footer", "assessment-prompt"].forEach(function (name) {
     var slot = document.querySelector('[data-include="' + name + '"]');
     var cached = slot && readCache(name);
     if (cached) slot.outerHTML = cached;
@@ -87,6 +87,9 @@
   inject("header")
     .then(function () {
       return inject("footer");
+    })
+    .then(function () {
+      return inject("assessment-prompt");
     })
     .then(function () {
       markNav();

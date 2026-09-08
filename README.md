@@ -12,7 +12,7 @@ Play happens in the player’s own AI agent. This repository is a static site th
 - `/certify/` — intro; `paste.html` / `certificate.html` (steps 1–2)
 - `/about/` — out-of-world credit and privacy note
 
-Shared mast and nav live in `includes/` and are injected by `js/chrome.js` (same pattern as humoludens). Report is deferred past v1. Visual exploration lives under `directions/` (archive; not linked from the live nav).
+Shared mast, nav, and the Official Assessment Prompt live in `includes/` and are injected by `js/chrome.js` (same pattern as humoludens). Report is deferred past v1. Visual exploration lives under `directions/` (archive; not linked from the live nav).
 
 ## Local preview
 
